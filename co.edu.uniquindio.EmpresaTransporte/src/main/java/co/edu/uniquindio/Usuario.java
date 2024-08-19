@@ -4,16 +4,19 @@ public class Usuario {
 
     public String nombre;
     public int edad;
+    public double peso;
     public Vehiculo vehiculoAsociado;
 
     /**
      * Constructor de la clase Usuario
      * @param nombre
      * @param edad
+     * @param peso
      */
-    Usuario(String nombre, int edad) {
+    Usuario(String nombre, int edad, double peso) {
         this.nombre = nombre;
         this.edad = edad;
+        this.peso = peso;
     }
 
     /**
@@ -48,7 +51,27 @@ public class Usuario {
         this.edad = edad;
     }
 
+    /**
+     * Método get para obtener el peso del usuario
+     * @return
+     */
+    public double getPeso() {
+        return peso;
+    }
+
+    /**
+     * Método set para modificar el peso del usuario
+     * @param peso
+     */
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    /**
+     * Método to String para obtener la información del usuario
+     * @return
+     */
     public String toString() {
-        return "Usuario: " + nombre + ", Edad: " + edad;
+        return "Usuario: " + nombre + ", Edad: " + edad + ", Peso: " + peso;
     }
 }

@@ -1,6 +1,8 @@
 package co.edu.uniquindio;
 
 import javax.swing.JOptionPane;
+import java.util.Collection;
+import java.util.LinkedList;
 
 public class MainTransporte {
     public static Empresa empresa = new Empresa("Movilidad SA");
@@ -16,13 +18,17 @@ public class MainTransporte {
         VehiculoTransporte vehiculo2 = new VehiculoTransporte("RHW56E", "2022", "Mazda", "Rojo", 24);
         VehiculoTransporte vehiculo3 = new VehiculoTransporte("URQ23L", "2019", "Suzuki", "Blanco", 20);
 
-        Usuario usuario1 = new Usuario("Camila", 23);
-        Usuario usuario2 = new Usuario("Miguel", 19);
-        Usuario usuario3 = new Usuario("Santiago", 18);
+        Usuario usuario1 = new Usuario("Camila", 23, 62.4);
+        Usuario usuario2 = new Usuario("Miguel", 19, 70.2);
+        Usuario usuario3 = new Usuario("Santiago", 18, 71.1);
 
         empresa.agregarVehiculoTransporte(vehiculo1);
         empresa.agregarVehiculoTransporte(vehiculo2);
         empresa.agregarVehiculoTransporte(vehiculo3);
+
+        empresa.agregarUsuario(usuario1);
+        empresa.agregarUsuario(usuario2);
+        empresa.agregarUsuario(usuario3);
 
         vehiculo1.agregarUsuario(usuario1);
         vehiculo1.agregarUsuario(usuario2);
@@ -31,12 +37,13 @@ public class MainTransporte {
 
     public static void mostrarMenu() {
         String opcion = "0";
-        while (!opcion.equals("3")) {
+        while (!opcion.equals("4")) {
             String menu = """
                         Menu de registro
                         1. Registrar Propietario con Vehículo
                         2. Contar pasajeros transportados
-                        3. Salir""";
+                        3. Obtener lista de usuarios mayores a un peso determinado
+                        4. Salir""";
             opcion = JOptionPane.showInputDialog(null, menu, "Seleccione una opción", JOptionPane.QUESTION_MESSAGE);
 
             switch (opcion) {
@@ -47,6 +54,9 @@ public class MainTransporte {
                     contarPasajerosTransportados();
                     break;
                 case "3":
+                    obtenerListaUsuariosMayorPeso();
+                    break;
+                case "4":
                     JOptionPane.showMessageDialog(null, "Saliendo...");
                     break;
                 default:
@@ -94,5 +104,22 @@ public class MainTransporte {
 
         JOptionPane.showMessageDialog(null, propietario);
         JOptionPane.showMessageDialog(null, vehiculo);
+    }
+
+    public static void obtenerListaUsuariosMayorPeso() {
+        double peso = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el peso a superar"));
+
+        Collection<Usuario> nuevaLista = new LinkedList<>();
+        if(!empresa.getUsuarios().isEmpty()) {
+            for(Usuario usuario : empresa.getUsuarios()) {
+                if(usuario.getPeso() > peso) {
+                    nuevaLista.add(usuario);
+                }
+            }
+            JOptionPane.showMessageDialog(null, nuevaLista);
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "No hay usuarios en la empresa");
+        }
     }
 }
