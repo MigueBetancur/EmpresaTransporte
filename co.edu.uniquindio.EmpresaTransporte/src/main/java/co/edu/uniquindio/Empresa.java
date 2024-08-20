@@ -13,7 +13,7 @@ public class Empresa {
 
     /**
      * Constructor de la clase Empresa
-     * @param nombre
+     * @param nombre {string} - El nombre de la empresa
      */
     Empresa(String nombre) {
         this.nombre = nombre;
@@ -25,7 +25,7 @@ public class Empresa {
 
     /**
      * Método get para obtener el nombre de la empresa
-     * @return
+     * @return {Object} - Un objeto con el nombre de la empresa
      */
     public String getNombre() {
         return nombre;
@@ -33,7 +33,7 @@ public class Empresa {
 
     /**
      * Método set para modificar el nombre de la empresa
-     * @param nombre
+     * @param nombre {string} - El nombre de la empresa a modificar
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -41,7 +41,7 @@ public class Empresa {
 
     /**
      * Método para agregar un propietario a la lista
-     * @param propietario
+     * @param propietario {Propietario} - El propietario que se va a agregar a la lista de propietarios
      */
     public void agregarPropietario(Propietario propietario) {
         this.listPropietarios.add(propietario);
@@ -49,7 +49,7 @@ public class Empresa {
 
     /**
      * Método get para obtener la lista de propietarios
-     * @return
+     * @return {Collection} - Una lista con los propietarios de la empresa
      */
     public Collection<Propietario> getPropietarios() {
         return listPropietarios;
@@ -57,7 +57,7 @@ public class Empresa {
 
     /**
      * Método para agregar un usuario  a la lista
-     * @param usuario
+     * @param usuario {Usuario} - El usuario que se va a agregar a la lista de propietarios
      */
     public void agregarUsuario(Usuario usuario) {
         this.listUsuarios.add(usuario);
@@ -65,7 +65,7 @@ public class Empresa {
 
     /**
      * Método get para obtener la lista de usuarios
-     * @return
+     * @return {Collection} - Una lista con los usuarios de la empresa
      */
     public Collection<Usuario> getUsuarios() {
         return listUsuarios;
@@ -73,7 +73,7 @@ public class Empresa {
 
     /**
      * Método para agregar un vehículo de carga a la lista
-     * @param vehiculoCarga
+     * @param vehiculoCarga {VehiculoCarga} - El vehículo de carga que se va a agregar a la lista de vehículos de carga
      */
     public void agregarVehiculoCarga(VehiculoCarga vehiculoCarga) {
         this.listVehiculosCarga.add(vehiculoCarga);
@@ -81,7 +81,7 @@ public class Empresa {
 
     /**
      * Método get para obtener la lista de vehículos de carga
-     * @return
+     * @return {Collection} - Una lista con los vehículos de carga de la empresa
      */
     public Collection<VehiculoCarga> getVehiculosCarga() {
         return listVehiculosCarga;
@@ -89,7 +89,7 @@ public class Empresa {
 
     /**
      * Método para agregar un vehículo de transporte a la lista
-     * @param vehiculoTransporte
+     * @param vehiculoTransporte {VehiculoTransporte} - El vehículo de transporte que se va a agregar a la lista de vehículos de transporte
      */
     public void agregarVehiculoTransporte(VehiculoTransporte vehiculoTransporte) {
         this.listVehiculosTransporte.add(vehiculoTransporte);
@@ -97,7 +97,7 @@ public class Empresa {
 
     /**
      * Método get para obtener la lista de vehículos de transporte
-     * @return
+     * @return {Collection} - Una lista con los vehículos de transporte de la empresa
      */
     public Collection<VehiculoTransporte> getVehiculosTransporte() {
         return listVehiculosTransporte;
@@ -105,7 +105,7 @@ public class Empresa {
 
     /**
      * Método para obtener un vehículo de transporte con su placa
-     * @param placa
+     * @param placa {string} - La placa por la cual se obtiene el vehículo de transporte
      * @return
      */
     public VehiculoTransporte obtenerVehiculoTransportePorPlaca(String placa) {

@@ -7,12 +7,12 @@ public class VehiculoCarga extends Vehiculo{
 
     /**
      * Constructor de la clase VehiculoCarga
-     * @param placa
-     * @param modelo
-     * @param marca
-     * @param color
-     * @param capacidadCarga
-     * @param numeroEjes
+     * @param placa {string} - La placa de un vehículo de carga
+     * @param modelo {string} - El modelo de un vehículo de carga
+     * @param marca {string} - La marca de un vehículo de carga
+     * @param color {string} - El color de un vehículo de carga
+     * @param capacidadCarga {double} - La capacidad de carga de un vehículo de carga
+     * @param numeroEjes {int} - El número de ejes de un vehículo de carga
      */
     VehiculoCarga(String placa, String modelo, String marca, String color, double capacidadCarga, int numeroEjes) {
         super(placa, modelo, marca, color);
@@ -22,7 +22,7 @@ public class VehiculoCarga extends Vehiculo{
 
     /**
      * Método get para obtener la capacidad de carga del vehículo
-     * @return
+     * @return {Object} - Un objeto con la capacidad de carga de un vehículo de carga
      */
     public double getCapacidadCarga() {
         return capacidadCarga;
@@ -30,7 +30,7 @@ public class VehiculoCarga extends Vehiculo{
 
     /**
      * Método set para modificar la capacidad de carga del vehículo
-     * @param capacidadCarga
+     * @param capacidadCarga {double} - La capacidad de carga a modificar
      */
     public void setCapacidadCarga(double capacidadCarga) {
         this.capacidadCarga = capacidadCarga;
@@ -38,7 +38,7 @@ public class VehiculoCarga extends Vehiculo{
 
     /**
      * Método get para obtener el número de ejes del vehículo
-     * @return
+     * @return {Object} - Un objeto con el número de ejes de un vehículo de carga
      */
     public int getNumeroEjes() {
         return numeroEjes;
@@ -46,7 +46,7 @@ public class VehiculoCarga extends Vehiculo{
 
     /**
      * Método set para modificar el número de ejes del vehículo
-     * @param numeroEjes
+     * @param numeroEjes {int} - El número de ejes a modificar
      */
     public void setNumeroEjes(int numeroEjes) {
         this.numeroEjes = numeroEjes;
@@ -54,7 +54,7 @@ public class VehiculoCarga extends Vehiculo{
 
     /**
      * Método toString para mostrar la información de un vehículo de carga
-     * @return
+     * @return {Object} - Un objeto con la información de un vehículo de carga
      */
     public String toString() {
         return "Placa: " + placa + ", Modelo: " + modelo + ", Marca: " + marca + ", Color: " + color + ", Capacidad: " + capacidadCarga + ", Numero de Ejes: " + numeroEjes;

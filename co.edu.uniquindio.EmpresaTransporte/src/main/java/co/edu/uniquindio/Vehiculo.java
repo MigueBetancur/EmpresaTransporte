@@ -14,10 +14,10 @@ public class Vehiculo {
 
     /**
      * Constructor de la clase Vehículo
-     * @param placa
-     * @param modelo
-     * @param marca
-     * @param color
+     * @param placa {string} - La placa de un vehículo
+     * @param modelo {string} - El modelo de un vehículo
+     * @param marca {string} - La marca de un vehículo
+     * @param color {string} - El color de un vehículo
      */
     Vehiculo(String placa, String modelo, String marca, String color) {
         this.placa = placa;
@@ -29,7 +29,7 @@ public class Vehiculo {
 
     /**
      * Método get para obtener la placa del vehículo
-     * @return
+     * @return {Object} - Un objeto con la placa de un vehículo
      */
     public String getPlaca() {
         return placa;
@@ -37,7 +37,7 @@ public class Vehiculo {
 
     /**
      * Método set para modificar la placa del vehículo
-     * @param placa
+     * @param placa {string} - La placa de un vehículo a modificar
      */
     public void setPlaca(String placa) {
         this.placa = placa;
@@ -45,7 +45,7 @@ public class Vehiculo {
 
     /**
      * Método get para obtener el modelo del vehículo
-     * @return
+     * @return {Object} - Un objeto con el modelo de un vehículo
      */
     public String getModelo() {
         return modelo;
@@ -53,7 +53,7 @@ public class Vehiculo {
 
     /**
      * Método set para modificar el modelo del vehículo
-     * @param modelo
+     * @param modelo {string} - El modelo de un vehículo a modificar
      */
     public void setModelo(String modelo) {
         this.modelo = modelo;
@@ -61,7 +61,7 @@ public class Vehiculo {
 
     /**
      * Método get para obtener la marca del vehículo
-     * @return
+     * @return {Object} - Un objeto con la marca de un vehículo
      */
     public String getMarca() {
         return marca;
@@ -69,7 +69,7 @@ public class Vehiculo {
 
     /**
      * Método set para modificar la marca del vehículo
-     * @param marca
+     * @param marca {string} - La marca de un vehículo a modificar
      */
     public void setMarca(String marca) {
         this.marca = marca;
@@ -77,7 +77,7 @@ public class Vehiculo {
 
     /**
      * Método para obtener el color del vehículo
-     * @return
+     * @return {Object} - Un objeto con el color de un vehículo
      */
     public String getColor() {
         return color;
@@ -85,11 +85,9 @@ public class Vehiculo {
 
     /**
      * Método para modificar el color del vehículo
-     * @param color
+     * @param color {string} - El color de un vehículo a modificar
      */
     public void setColor(String color) {
         this.color = color;
     }
-
-
 }

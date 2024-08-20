@@ -12,6 +12,9 @@ public class MainTransporte {
         mostrarMenu();
     }
 
+    /*
+     * Método para crear instancias de las clases
+     */
     public static void inicializarDatos() {
 
         VehiculoTransporte vehiculo1 = new VehiculoTransporte("NEM31D", "2024", "Toyota", "Azul", 30);
@@ -35,6 +38,9 @@ public class MainTransporte {
         vehiculo1.agregarUsuario(usuario3);
     }
 
+    /*
+     * Método para mostrar un menú interactivo
+     */
     public static void mostrarMenu() {
         String opcion = "0";
         while (!opcion.equals("6")) {
@@ -63,6 +69,7 @@ public class MainTransporte {
                     break;
                 case "5":
                     obtenerCantidadUsuariosRangoEdad();
+                    break;
                 case "6":
                     JOptionPane.showMessageDialog(null, "Saliendo...");
                     break;
@@ -72,6 +79,9 @@ public class MainTransporte {
         }
     }
 
+    /*
+     * Método para contar los pasajeros transportados por un vehículo en específico
+     */
     public static void contarPasajerosTransportados() {
         int pasajerosTransportados = 0;
         if(!empresa.listVehiculosTransporte.isEmpty()) {
@@ -101,6 +111,9 @@ public class MainTransporte {
         }
     }
 
+    /*
+     * Método para registrar un propietario con un vehículo de carga
+     */
     public static void registrarPropietarioConVehiculoDeCarga() {
         String nombre = JOptionPane.showInputDialog(null, "Ingrese el nombre del propietario");
         String cedula = JOptionPane.showInputDialog(null, "Ingrese la cédula del propietario");
@@ -125,6 +138,9 @@ public class MainTransporte {
         JOptionPane.showMessageDialog(null, vehiculo);
     }
 
+    /*
+     * Método para obtener una lista de los usuarios que superan un peso dado
+     */
     public static void obtenerListaUsuariosMayorPeso() {
         double peso = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el peso a superar"));
 
@@ -142,6 +158,9 @@ public class MainTransporte {
         }
     }
 
+    /*
+     * Método para obtener cuantos propietarios son mayores de 40 años
+     */
     public static void obtenerListaPropietariosMayores() {
         int propietariosMayores = 0;
         for(Propietario propietario : empresa.listPropietarios) {
@@ -155,6 +174,9 @@ public class MainTransporte {
         JOptionPane.showMessageDialog(null, "Los propietarios mayores de 40 años son: " + propietariosMayores);
     }
 
+    /*
+     * Método para obtener la cantidad de usuarios que se encuentra en un rango de edad dado
+     */
     public static void obtenerCantidadUsuariosRangoEdad() {
         int valorInicial = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el valor inicial del rango"));
         int valorFinal = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el valor final del rango"));
@@ -168,6 +190,6 @@ public class MainTransporte {
                 usuariosRangoEdad += 0;
             }
         }
-        JOptionPane.showMessageDialog(null, "La cantidad de usuarios que están en el rango de edad entre " + valorInicial + " y " + valorFinal + " son: " + usuariosRangoEdad);
+        JOptionPane.showMessageDialog(null, "La cantidad de usuarios que están en el rango de edad entre " + valorInicial + " y " + valorFinal + " años son: " + usuariosRangoEdad);
     }
 }

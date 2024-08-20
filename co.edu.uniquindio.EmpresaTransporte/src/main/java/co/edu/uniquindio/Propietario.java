@@ -15,11 +15,11 @@ public class Propietario {
 
     /**
      * Constructor de la clase Propietario
-     * @param nombre
-     * @param cedula
-     * @param email
-     * @param celular
-     * @param edad
+     * @param nombre {string} - El nombre del propietario
+     * @param cedula {string} - La cédula del propietario
+     * @param email {string} - El email del propietario
+     * @param celular {string} - El celular del propietario
+     * @param edad {int} - La edad del propietario
      */
     Propietario(String nombre, String cedula, String email, String celular, int edad) {
         this.nombre = nombre;
@@ -32,7 +32,7 @@ public class Propietario {
 
     /**
      * Método get para obtener el nombre de un propietario
-     * @return
+     * @return {Object} - Un objeto con el nombre de un propietario
      */
     public String getNombre() {
         return nombre;
@@ -40,7 +40,7 @@ public class Propietario {
 
     /**
      * Método set para modificar el nombre de un propietario
-     * @param nombre
+     * @param nombre {string} - El nombre de un propietario a modificar
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -48,7 +48,7 @@ public class Propietario {
 
     /**
      * Método get para obtener la cédula de un propietario
-     * @return
+     * @return {Object} - Un objeto con la cédula de un propietario
      */
     public String getCedula() {
         return cedula;
@@ -56,7 +56,7 @@ public class Propietario {
 
     /**
      * Método set para modificar la cédula de un propietario
-     * @param cedula
+     * @param cedula {string} - La cédula de un propietario a modificar
      */
     public void setCedula(String cedula) {
         this.cedula = cedula;
@@ -64,7 +64,7 @@ public class Propietario {
 
     /**
      * Método get para obtener el email de un propietario
-     * @return
+     * @return {Object} - Un objeto con el email de un propietario
      */
     public String getEmail() {
         return email;
@@ -72,7 +72,7 @@ public class Propietario {
 
     /**
      * Método set para modificar el email de un propietario
-     * @param email
+     * @param email {string} - El email de un propietario a modificar
      */
     public void setEmail(String email) {
         this.email = email;
@@ -80,7 +80,7 @@ public class Propietario {
 
     /**
      * Método get para obtener el celular de un propietario
-     * @return
+     * @return {Object} - Un objeto con el celular de un propietario
      */
     public String getCelular() {
         return celular;
@@ -88,7 +88,7 @@ public class Propietario {
 
     /**
      * Método set para modificar el celular de un propietario
-     * @param celular
+     * @param celular {string} - El celular de un propietario a modificar
      */
     public void setCelular(String celular) {
         this.celular = celular;
@@ -96,7 +96,7 @@ public class Propietario {
 
     /**
      * Método get para obtener la edad de un propietario
-     * @return
+     * @return {Object} - Un objeto con la edad de un propietario
      */
     public int getEdad() {
         return edad;
@@ -104,7 +104,7 @@ public class Propietario {
 
     /**
      * Método set para modificar la edad de un propietario
-     * @param edad
+     * @param edad {int} - La edad de un propietario a modificar
      */
     public void setEdad(int edad) {
         this.edad = edad;
@@ -112,7 +112,7 @@ public class Propietario {
 
     /**
      * Método para asociar un vehiculo a un propietario
-     * @param vehiculo
+     * @param vehiculo {Vehiculo} - El vehículo que se va a asociar con un propietario
      */
     public void agregarVehiculo(Vehiculo vehiculo) {
         vehiculoAsociado = vehiculo;
@@ -120,7 +120,7 @@ public class Propietario {
 
     /**
      * Método toString para mostrar la información de un propietario
-     * @return
+     * @return {Object} - Un objeto con la información de un propietario
      */
     public String toString() {
         return "Propietario: " + nombre + ", Cédula: " + cedula + ", Email: " + email + ", Celular: " + celular;
