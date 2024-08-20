@@ -72,16 +72,25 @@ public class MainTransporte {
     public static void contarPasajerosTransportados() {
         int pasajerosTransportados = 0;
         if(!empresa.listVehiculosTransporte.isEmpty()) {
+            String placa = JOptionPane.showInputDialog(null, "Ingrese la placa del vehículo de transporte");
+            boolean vehiculoEncontrado = false;
+
             for(VehiculoTransporte vehiculoTransporte : empresa.listVehiculosTransporte) {
-                if(!vehiculoTransporte.listUsuariosAsociados.isEmpty()) {
-                    for(Usuario usuario : vehiculoTransporte.listUsuariosAsociados) {
-                        pasajerosTransportados++;
+                if(vehiculoTransporte.getPlaca().equals(placa)) {
+                    vehiculoEncontrado = true;
+
+                    if(!vehiculoTransporte.listUsuariosAsociados.isEmpty()) {
+                        pasajerosTransportados = vehiculoTransporte.listUsuariosAsociados.size();
+                        JOptionPane.showMessageDialog(null, "Los pasajeros transportados por el vehículo: " + vehiculoTransporte.getPlaca() + " son: " + pasajerosTransportados);
                     }
-                    JOptionPane.showMessageDialog(null, "Los pasajeros transportados por el vehículo: " + vehiculoTransporte.getPlaca() + " son: " + pasajerosTransportados);
+                    else {
+                        JOptionPane.showMessageDialog(null, "La lista de usuarios del vehículo " + placa + " esta vacía");
+                    }
+                    break;
                 }
-                else {
-                    JOptionPane.showMessageDialog(null, "La lista de usuarios del vehículo " + vehiculoTransporte.getPlaca() + " esta vacía");
-                }
+            }
+            if(!vehiculoEncontrado) {
+                JOptionPane.showMessageDialog(null, "No se encontró un vehículo con la placa: " + placa);
             }
         }
         else {
