@@ -9,6 +9,7 @@ public class Propietario {
     public String cedula;
     public String email;
     public String celular;
+    public int edad;
     public Vehiculo vehiculoAsociado;
     public Collection<Vehiculo> listVehiculosAsociados;
 
@@ -18,17 +19,19 @@ public class Propietario {
      * @param cedula
      * @param email
      * @param celular
+     * @param edad
      */
-    Propietario(String nombre, String cedula, String email, String celular) {
+    Propietario(String nombre, String cedula, String email, String celular, int edad) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.email = email;
         this.celular = celular;
+        this.edad = edad;
         this.listVehiculosAsociados = new LinkedList<>();
     }
 
     /**
-     * Método get para obtener el nombre del propietario
+     * Método get para obtener el nombre de un propietario
      * @return
      */
     public String getNombre() {
@@ -36,7 +39,7 @@ public class Propietario {
     }
 
     /**
-     * Método set para modificar el nombre del propietario
+     * Método set para modificar el nombre de un propietario
      * @param nombre
      */
     public void setNombre(String nombre) {
@@ -44,7 +47,7 @@ public class Propietario {
     }
 
     /**
-     * Método get para obtener la cédula del propietario
+     * Método get para obtener la cédula de un propietario
      * @return
      */
     public String getCedula() {
@@ -52,7 +55,7 @@ public class Propietario {
     }
 
     /**
-     * Método set para modificar la cédula del propietario
+     * Método set para modificar la cédula de un propietario
      * @param cedula
      */
     public void setCedula(String cedula) {
@@ -60,7 +63,7 @@ public class Propietario {
     }
 
     /**
-     * Método get para obtener el email del propietario
+     * Método get para obtener el email de un propietario
      * @return
      */
     public String getEmail() {
@@ -68,7 +71,7 @@ public class Propietario {
     }
 
     /**
-     * Método set para modificar el email del propietario
+     * Método set para modificar el email de un propietario
      * @param email
      */
     public void setEmail(String email) {
@@ -76,7 +79,7 @@ public class Propietario {
     }
 
     /**
-     * Método get para obtener el celular del propietario
+     * Método get para obtener el celular de un propietario
      * @return
      */
     public String getCelular() {
@@ -84,13 +87,33 @@ public class Propietario {
     }
 
     /**
-     * Método set para modificar el celular del propietario
+     * Método set para modificar el celular de un propietario
      * @param celular
      */
     public void setCelular(String celular) {
         this.celular = celular;
     }
 
+    /**
+     * Método get para obtener la edad de un propietario
+     * @return
+     */
+    public int getEdad() {
+        return edad;
+    }
+
+    /**
+     * Método set para modificar la edad de un propietario
+     * @param edad
+     */
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    /**
+     * Método para asociar un vehiculo a un propietario
+     * @param vehiculo
+     */
     public void agregarVehiculo(Vehiculo vehiculo) {
         vehiculoAsociado = vehiculo;
     }

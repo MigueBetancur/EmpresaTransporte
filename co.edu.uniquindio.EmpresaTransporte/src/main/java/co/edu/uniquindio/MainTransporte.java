@@ -37,13 +37,14 @@ public class MainTransporte {
 
     public static void mostrarMenu() {
         String opcion = "0";
-        while (!opcion.equals("4")) {
+        while (!opcion.equals("5")) {
             String menu = """
                         Menu de registro
                         1. Registrar Propietario con Vehículo
                         2. Contar pasajeros transportados
                         3. Obtener lista de usuarios mayores a un peso determinado
-                        4. Salir""";
+                        4. Obtener cantidad de propietarioa mayores de 40 años
+                        5. Salir""";
             opcion = JOptionPane.showInputDialog(null, menu, "Seleccione una opción", JOptionPane.QUESTION_MESSAGE);
 
             switch (opcion) {
@@ -57,6 +58,9 @@ public class MainTransporte {
                     obtenerListaUsuariosMayorPeso();
                     break;
                 case "4":
+                    obtenerListaPropietariosMayores();
+                    break;
+                case "5":
                     JOptionPane.showMessageDialog(null, "Saliendo...");
                     break;
                 default:
@@ -90,8 +94,9 @@ public class MainTransporte {
         String cedula = JOptionPane.showInputDialog(null, "Ingrese la cédula del propietario");
         String email = JOptionPane.showInputDialog(null, "Ingrese el email del propietario");
         String celular = JOptionPane.showInputDialog(null, "Ingrese el celular del propietario");
+        int edad = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la edad del propietario"));
 
-        Propietario propietario = new Propietario(nombre, cedula, email, celular);
+        Propietario propietario = new Propietario(nombre, cedula, email, celular, edad);
 
         String placa = JOptionPane.showInputDialog(null, "Ingrese la placa del vehículo de carga");
         String modelo = JOptionPane.showInputDialog(null, "Ingrese el modelo del vehículo de carga");
@@ -101,6 +106,8 @@ public class MainTransporte {
         int numeroEjes = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el número de ejes del vehículo de carga"));
 
         VehiculoCarga vehiculo = new VehiculoCarga(placa, modelo, marca, color, capacidadCarga, numeroEjes);
+
+        empresa.agregarPropietario(propietario);
 
         JOptionPane.showMessageDialog(null, propietario);
         JOptionPane.showMessageDialog(null, vehiculo);
@@ -121,5 +128,18 @@ public class MainTransporte {
         else {
             JOptionPane.showMessageDialog(null, "No hay usuarios en la empresa");
         }
+    }
+
+    public static void obtenerListaPropietariosMayores() {
+        int propietariosMayores = 0;
+        for(Propietario propietario : empresa.listPropietarios) {
+            if(propietario.getEdad() > 40) {
+                propietariosMayores++;
+            }
+            else {
+                propietariosMayores += 0;
+            }
+        }
+        JOptionPane.showMessageDialog(null, "Los propietarios mayores de 40 años son: " + propietariosMayores);
     }
 }
