@@ -37,14 +37,15 @@ public class MainTransporte {
 
     public static void mostrarMenu() {
         String opcion = "0";
-        while (!opcion.equals("5")) {
+        while (!opcion.equals("6")) {
             String menu = """
                         Menu de registro
                         1. Registrar Propietario con Vehículo
                         2. Contar pasajeros transportados
                         3. Obtener lista de usuarios mayores a un peso determinado
-                        4. Obtener cantidad de propietarioa mayores de 40 años
-                        5. Salir""";
+                        4. Obtener cantidad de propietarios mayores de 40 años
+                        5. Obtener cantidad de usuarios en un rango de edad determinado
+                        6. Salir""";
             opcion = JOptionPane.showInputDialog(null, menu, "Seleccione una opción", JOptionPane.QUESTION_MESSAGE);
 
             switch (opcion) {
@@ -61,6 +62,8 @@ public class MainTransporte {
                     obtenerListaPropietariosMayores();
                     break;
                 case "5":
+                    obtenerCantidadUsuariosRangoEdad();
+                case "6":
                     JOptionPane.showMessageDialog(null, "Saliendo...");
                     break;
                 default:
@@ -150,5 +153,21 @@ public class MainTransporte {
             }
         }
         JOptionPane.showMessageDialog(null, "Los propietarios mayores de 40 años son: " + propietariosMayores);
+    }
+
+    public static void obtenerCantidadUsuariosRangoEdad() {
+        int valorInicial = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el valor inicial del rango"));
+        int valorFinal = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el valor final del rango"));
+
+        int usuariosRangoEdad = 0;
+        for(Usuario usuario : empresa.getUsuarios()) {
+            if(usuario.getEdad() >= valorInicial && usuario.getEdad() <= valorFinal) {
+                usuariosRangoEdad ++;
+            }
+            else {
+                usuariosRangoEdad += 0;
+            }
+        }
+        JOptionPane.showMessageDialog(null, "La cantidad de usuarios que están en el rango de edad entre " + valorInicial + " y " + valorFinal + " son: " + usuariosRangoEdad);
     }
 }
